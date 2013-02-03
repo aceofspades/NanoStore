@@ -780,7 +780,9 @@
     NSMutableString *segment = [NSMutableString string];
     NSMutableString *value = nil;
 
-    if ((YES == [aValue isKindOfClass:[NSString class]]) || (nil == aValue)) {
+    // RubyMotion fix
+    //if ((YES == [aValue isKindOfClass:[NSString class]]) || (nil == aValue)) {
+    if ((YES == [aValue isKindOfClass:[NSString class]])) {
         if (nil == aValue) {
             value = [[NSMutableString alloc]initWithFormat:@"((%@ = '%@') OR (%@ GLOB '%@.*') OR (%@ GLOB '*.%@.*') OR (%@ GLOB '*.%@'))", NSFAttribute, anAttributeValue, NSFAttribute, anAttributeValue, NSFAttribute, anAttributeValue, NSFAttribute, anAttributeValue];
             [segment appendString:value];

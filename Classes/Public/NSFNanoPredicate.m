@@ -51,7 +51,8 @@
 
 - (id)initWithColumn:(NSFTableColumnType)type matching:(NSFMatchType)matching value:(id)aValue
 {
-    NSAssert(nil != aValue, @"*** -[%@ %@]: value is nil.", [self class], NSStringFromSelector(_cmd));
+    // RubyMotion fix
+    //NSAssert(nil != aValue], @"*** -[%@ %@]: value is nil.", [self class], NSStringFromSelector(_cmd));
     NSAssert([aValue isKindOfClass:[NSString class]] || [aValue isKindOfClass:[NSNull class]], @"*** -[%@ %@]: value must be of type NSString or NSNull.", [self class], NSStringFromSelector(_cmd));
 
     if ((self = [super init])) {
